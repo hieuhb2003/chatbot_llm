@@ -10,7 +10,6 @@ from config import Config
 from langchain_community.utilities.sql_database import SQLDatabase
 from langchain_groq import ChatGroq
 from langchain.chains import create_sql_query_chain
-from langchain_community.vectorstores.faiss import FAISS
 from langchain_core.prompts import (
     ChatPromptTemplate,
     FewShotPromptTemplate,
@@ -108,22 +107,8 @@ full_prompt = ChatPromptTemplate.from_messages(
         MessagesPlaceholder("agent_scratchpad"),
     ]
 )
-chain = create_sql_query_chain(llm, db, few_shot_prompt)
 write_query = create_sql_query_chain(llm, db, few_shot_prompt)
 execute_query = QuerySQLDataBaseTool(db=db)
-# response = chain.invoke({"question":"Giá gốc của sản phẩm Bếp từ đơn AIO Smart kèm nồi. Trong câu có NAME: Bếp từ đơn AIO Smart kèm nồi",'input': "Giá gốc của sản phẩm Bếp từ đơn AIO Smart kèm nồi. Trong câu có NAME: Bếp từ đơn AIO Smart kèm nồi" ,"top_k":3, "table_info":"data_items"})
-# print(response)
-def get_query(chain,question):
-    start_index = -1
-    while start_index == -1:
-        response = chain.invoke({"question":question,"input" : question,"top_k":3, "table_info":"data_items"})
-        start_index = response.find("SELECT")
-    i = start_index
-    q=""
-    while response[i] != ";":
-        q += response[i]
-        i += 1
-    return q
 
 def extract(res):
     start_index = -1
@@ -143,15 +128,9 @@ Các cột có trong SQL: ORDER, PRODUCT_INFO_ID, GROUP_NAME, PRODUCT_CODE, NAME
 Câu hỏi: {question}
 Truy vấn SQL: {query}
 Kết quả SQL: {result}
+Nếu kết quả SQL trả về rỗng, hãy thông báo cho người dùng rằng không có sản phẩm phù hợp với yêu cầu của họ và yêu cầu họ cung cấp thông tin cụ thể hơn hoặc gợi ý tư vấn giải pháp giúp họ.
 Câu trả lời: """
 )
-
-
-# new_chain = write_query | StrOutputParser() | RunnableLambda(extract) |( {
-#     "query": itemgetter("query"),
-#     "result": itemgetter("query") | execute_query,
-# }
-# ) | answer_prompt | llm | StrOutputParser()
 
 new_chain = (
         RunnablePassthrough.assign(query=write_query).assign(
@@ -162,80 +141,6 @@ new_chain = (
         | StrOutputParser()
 )
 
-question = "Giá gốc của sản phẩm Bếp từ đơn AIO Smart kèm nồi. Trong câu có NAME: Bếp từ đơn AIO Smart kèm nồi"
+question = "Sản phẩm bếp từ nào bán chạy nhất. Trong đó có GROUP_NAME: Bếp từ" 
 response = new_chain.invoke({"question":question, "input": question, "top_k":3, "table_info":"data_items"})
 print(response)
-# print(get_query(chain,"Giá gốc của sản phẩm Bếp từ đơn AIO Smart kèm nồi. Trong câu có NAME: Bếp từ đơn AIO Smart kèm nồi"))
-# query = """SELECT * 
-# FROM data_items 
-# WHERE NAME LIKE '%Bếp từ đơn AIO Smart%' OR NAME LIKE '%Bếp từ đơn AIO%' OR SPECIFICATION_BACKUP LIKE '%Bếp từ đơn AIO Smart%' OR SPECIFICATION_BACKUP LIKE '%Bếp từ đơn AIO%'
-# LIMIT 3;"""
-# res = db.run(query)
-# print(res)
-
-
-
-# query = extract(response)
-# print(query)
-# result = db.run(query)
-# print(result)
-
-# answer_prompt = PromptTemplate.from_template(
-# """Given the following user question, corresponding SQL query, and SQL result, answer the user question.
-# Question: {question}
-# SQL Query: {query}
-# SQL Result: {result}
-# Answer: """
-# )
-# # ans = answer_prompt.format(question=question, query=query, result=result)
-# # print(ans)
-# print(llm(answer_prompt.invoke({"question":question, "query":query, "result":result})))
-# answer_prompt.format(input=question, query=query, result=result)
-
-# print(answer_prompt.format(question=question, query=query, result=result))
-
-
-
-# def extract(res):
-#     start_index = res.find("SELECT")
-#     if start_index == -1:
-#         return {"query": "", "result": []}  # If no query is found, return empty
-#     i = start_index
-#     q = ""
-#     while i < len(res) and res[i] != ";":
-#         q += res[i]
-#         i += 1
-#     query = q + ";"
-#     result = db.run(query)  # Execute the query
-#     return {"query": query, "result": result}
-
-# full_chain = chain | StrOutputParser() | RunnablePassthrough.assign(query=RunnableLambda(extract))
-# respone = full_chain.invoke({"question":question, "input": question, "top_k":3, "table_info":"data_items"})
-# print(respone)
-
-# 
-
-# llm_viet = AutoModelForCausalLM.from_pretrained('vinallama-7b-chat_q5_0.gguf', temperature=0)
-
-
-# full_chain = (
-#     chain
-#     | StrOutputParser()  
-#     | RunnableLambda(extract)  
-#     | execute_query
-#     | answer_prompt  
-#     | llm
-# )
-
-# full_chain = (
-#     chain  # Start with the LLM chain to generate SQL query
-#     | StrOutputParser()  # Parse the LLM output
-#     | RunnableLambda(extract)  # Extract SQL query and get result
-#     | RunnablePassthrough.assign(question="input", query="query", result="result")  # Pass the extracted data
-#     | answer_prompt  # Create prompt for final answer
-#     | llm_viet  # Generate final answer with Vietnamese LLM
-# )
-
-# response = chain.invoke({"question": question, "input": question, "top_k": 3, "table_info": "data_items"})
-# print(response)
-
