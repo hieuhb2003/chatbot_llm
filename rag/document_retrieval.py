@@ -172,6 +172,6 @@ class DocumentRetrieval:
             text += doc['passage'].strip("Title: ").strip(doc["title"]).strip() + '\n'
         return text
     
-retriever = DocumentRetrieval()
-question = "Có bao nhiêu loại nồi cơm điện"
-print(retriever.retrieve_documents(question))
+# retriever = DocumentRetrieval()
+# question = "Có bao nhiêu loại nồi cơm điện"
+# print(retriever.retrieve_documents(question))

@@ -17,16 +17,14 @@ from langchain_core.prompts import (
     PromptTemplate,
     SystemMessagePromptTemplate,
 )
-from langchain_core.runnables import RunnableLambda, RunnablePassthrough, RunnableMap
+from langchain_core.messages import HumanMessage,AIMessage
+from langchain_core.runnables import RunnableLambda, RunnablePassthrough
 from langchain_core.output_parsers import StrOutputParser
 from langchain_community.utilities.sql_database import SQLDatabase
-from ctransformers import AutoModelForCausalLM
 from config import Config
 import os
-from langchain_community.vectorstores.faiss import FAISS
 from langchain_community.tools.sql_database.tool import QuerySQLDataBaseTool
 from langchain_core.runnables import RunnableLambda
-from langchain_core.runnables import chain
 from operator import itemgetter
 llm = ChatGroq(model="gemma2-9b-it")
 db = SQLDatabase.from_uri(Config.db_sql)
@@ -118,7 +116,7 @@ full_prompt = ChatPromptTemplate.from_messages(
         ("human", "{input}"),
     ]
 )
-write_query = create_sql_query_chain(llm, db, few_shot_prompt)
+write_query = create_sql_query_chain(llm, db, full_prompt)
 execute_query = QuerySQLDataBaseTool(db=db)
 
 def extract(res):
@@ -154,6 +152,17 @@ new_chain = (
         | RunnableLambda(complete_respone)
 )
 
-question = "Sản phẩm bếp từ nào bán chạy nhất. Trong đó có GROUP_NAME: Bếp từ" 
-response = new_chain.invoke({"question":question, "input": question, "top_k":3, "table_info":"data_items"})
+chat_history = []
+question = "Bán cho tôi 2 điều hòa Daikin có giá rẻ, 3 nồi cơm điện giá có tầm giá chung" 
+response = new_chain.invoke({"question":question, "input": question, "top_k":3, "table_info":"data_items","history":chat_history})
+print(response)
+chat_history.extend([HumanMessage(content=question), AIMessage(content = response)])
+
+second_question = "Cho tôi tên các loại bếp từ này"
+response = new_chain.invoke({"question":second_question, "input": second_question, "top_k":3, "table_info":"data_items","history":chat_history})
+print(response)
+chat_history.extend([HumanMessage(content=second_question), AIMessage(content = response)])
+
+third_question = "Giá bán các loại bếp từ trên"
+response = new_chain.invoke({"question":third_question, "input": third_question, "top_k":3, "table_info":"data_items","history":chat_history})
 print(response)
