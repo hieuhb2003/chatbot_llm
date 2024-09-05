@@ -74,6 +74,18 @@ examples = [
             {
                 "input": "Giá gốc của sản phẩm Bếp từ đơn AIO Smart kèm nồi. Trong câu có NAME: Bếp từ đơn AIO Smart kèm nồi",
                 "query": "SELECT RAW_PRICE\nFROM data_items \nWHERE NAME LIKE \'%Bếp từ đơn AIO Smart kèm nồi%\' OR SPECIFICATION_BACKUP LIKE \'%Bếp từ đơn AIO Smart kèm nồi%\' \nLIMIT 1;"
+            },
+            {
+                "input":"Tôi muốn mua điều hòa dưới 10 triệu và Đèn Năng Lượng Mặt Trời trên 8 triệu. Trong câu có: GROUP_NAME: Đèn Năng Lượng Mặt Trời, Điều hòa",
+                "query": "SELECT * \nFROM data_items \nWHERE (GROUP_NAME LIKE '%điều hòa%' AND RAW_PRICE < 10000000)\n OR \n(GROUP_NAME LIKE '%Đèn Năng Lượng Mặt Trời%' AND RAW_PRICE > 8000000);",
+            },
+            {
+                "input":"Bán cho tôi 2 điều hòa Daikin có giá rẻ, 3 nồi cơm điện giá có tầm giá chung",
+                "query":"SELECT * \nFROM data_items \nWHERE \n (NAME LIKE '%điều hòa Daikin%' AND RAW_PRICE IS NOT NULL) \nOR \n (NAME LIKE '%nồi cơm điện%' AND RAW_PRICE IS NOT NULL)\nORDER BY\n CASE\nWHEN NAME LIKE '%điều hòa Daikin%' THEN RAW_PRICE \n WHEN NAME LIKE '%nồi cơm điện%' THEN RAW_PRICE\n END ASC \nLIMIT 5;",
+            },
+            {
+                "input":"Bếp từ nào là sản phẩm bán chạy nhất. Trong câu có GROUP_NAME: Bếp từ",
+                "query":"SELECT NAME,QUANTITY_SOLD\nFROM data_items \nWHERE GROUP_NAME LIKE '%Bếp từ%' OR NAME LIKE '%bếp từ%' OR SPECIFICATION_BACKUP LIKE '%Bếp từ%'\nORDER BY QUANTITY_SOLD DESC\nLIMIT 1;",
             }
         ]
 from langchain_core.prompts import FewShotPromptTemplate, PromptTemplate
@@ -104,7 +116,6 @@ full_prompt = ChatPromptTemplate.from_messages(
         SystemMessagePromptTemplate(prompt=few_shot_prompt),
         MessagesPlaceholder(variable_name="history"),
         ("human", "{input}"),
-        MessagesPlaceholder("agent_scratchpad"),
     ]
 )
 write_query = create_sql_query_chain(llm, db, few_shot_prompt)
@@ -120,7 +131,7 @@ def extract(res):
     while res[i] != ";":
         q += res[i]
         i += 1
-    return {"query":  q + ';'}
+    return q + ';'
 
 answer_prompt = PromptTemplate.from_template(
     """Với câu hỏi của người dùng sau đây, truy vấn SQL tương ứng, và kết quả SQL, hãy trả lời câu hỏi của người dùng.
@@ -131,7 +142,8 @@ Kết quả SQL: {result}
 Nếu kết quả SQL trả về rỗng, hãy thông báo cho người dùng rằng không có sản phẩm phù hợp với yêu cầu của họ và yêu cầu họ cung cấp thông tin cụ thể hơn hoặc gợi ý tư vấn giải pháp giúp họ.
 Câu trả lời: """
 )
-
+def complete_respone(response : str):
+    return response.replace("**",'').strip()
 new_chain = (
         RunnablePassthrough.assign(query=write_query).assign(
         result=itemgetter("query") | RunnableLambda(extract) | execute_query
@@ -139,6 +151,7 @@ new_chain = (
         | answer_prompt
         | llm
         | StrOutputParser()
+        | RunnableLambda(complete_respone)
 )
 
 question = "Sản phẩm bếp từ nào bán chạy nhất. Trong đó có GROUP_NAME: Bếp từ" 
