@@ -1,0 +1,13 @@
+{
+    "conversations": [
+        {
+            "id_conversation": "user1",
+            "messages": [
+                {
+                    "HumanMessage": "giá Bếp từ đôi AIO Smart",
+                    "AIMessage": "Giá Bếp từ đôi AIO Smart là 4962870."
+                }
+            ]
+        }
+    ]
+}

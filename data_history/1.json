@@ -1,0 +1,86 @@
+{
+    "conversations": [
+        {
+            "id_conversation": "1",
+            "messages": [
+                {
+                    "HumanMessage": "2 loại Bếp từ đơn AIO Smart kèm nồi và Bếp từ đôi AIO Smart bếp nào rẻ hơn",
+                    "AIMessage": "Dựa trên thông tin được cung cấp, Bếp từ đơn AIO Smart kèm nồi rẻ hơn Bếp từ đôi AIO Smart.  \n\n* Bếp từ đơn AIO Smart kèm nồi có giá 1.089.000 VND.\n* Bếp từ đôi AIO Smart có giá 4.962.870 VND."
+                },
+                {
+                    "HumanMessage": "2 loại Bếp từ đơn AIO Smart kèm nồi và Bếp từ đôi AIO Smart bếp nào rẻ hơn",
+                    "AIMessage": "Dựa vào thông tin được cung cấp, Bếp từ đơn AIO Smart kèm nồi rẻ hơn Bếp từ đôi AIO Smart.  \n\n* Bếp từ đơn AIO Smart kèm nồi có giá là 1.089.000 đồng.\n* Bếp từ đôi AIO Smart có giá là 4.962.870 đồng."
+                },
+                {
+                    "HumanMessage": "giá bán của Đèn NLMT bàn chải rời thể 300W ",
+                    "AIMessage": "Giá bán chính thức của Đèn NLMT bàn chải rời thể 300W (Nhôm) là 1.270.940 đồng. \n\nTuy nhiên, có những chương trình ưu đãi:\n\n* Giá trị đơn hàng > 10 triệu: 1.146.420 đồng\n* Giá trị đơn hàng từ 5-10 triệu: 1.171.500 đồng \n \nLưu ý:  Giá trên chưa bao gồm VAT."
+                },
+                {
+                    "HumanMessage": "tính năng của Đèn NLMT bàn chải rời thể 300W ",
+                    "AIMessage": "Tính năng của Đèn NLMT bàn chải rời thể 300W (Nhôm) bao gồm:\n\n* Cảm biến ánh sáng tự động bật vào lúc hoàng hôn và tắt lúc bình minh.\n* Điều khiển từ xa bằng điều khiển từ xa được cung cấp. \n\n\nNgoài ra, sản phẩm còn có các tính năng khác như:\n\n*  Pin Lithium sắt phosphate 32650 / 3.2V 25000mAh cho thời gian chiếu sáng lên đến 12 giờ.\n*  Tiêu chuẩn chống nước IP67, có thể sử dụng trong nhiều điều kiện thời tiết. \n*  Nhiệt độ màu 6.500k, phù hợp với chiếu sáng ban đêm.\n*  LED SMD 5730-360PCS, mang lại hiệu suất chiếu sáng cao."
+                }
+            ]
+        },
+        {
+            "id_conversation": "424b73d5-fd81-4b89-8c71-73a6b22bceb8",
+            "messages": [
+                {
+                    "HumanMessage": "2 loại Bếp từ đơn AIO Smart kèm nồi và Bếp từ đôi AIO Smart bếp nào rẻ hơn",
+                    "AIMessage": "Dựa trên thông tin được cung cấp, Bếp từ đơn AIO Smart kèm nồi rẻ hơn. \n\n* Bếp từ đơn AIO Smart kèm nồi có giá: 1.089.000đ \n* Bếp từ đôi AIO Smart có giá: 4.962.870đ"
+                }
+            ]
+        },
+        {
+            "id_conversation": "ef3eef92-83cc-4b37-b166-a82df23d4b14",
+            "messages": [
+                {
+                    "HumanMessage": "2 loại Bếp từ đơn AIO Smart kèm nồi và Bếp từ đôi AIO Smart bếp nào rẻ hơn",
+                    "AIMessage": "Theo ngữ cảnh bạn cung cấp, Bếp từ đơn AIO Smart kèm nồi có giá 1.089.000 VND  mà Bếp từ đôi AIO Smart có giá 4.962.870 VND. \n\nVậy nên Bếp từ đơn AIO Smart kèm nồi rẻ hơn."
+                },
+                {
+                    "HumanMessage": "Miêu tả chức năng Bếp từ đôi AIO Smart ",
+                    "AIMessage": "Bếp từ đôi AIO Smart có công suất 4400W, chia làm hai vùng nấu với công suất 2200W mỗi vùng. \n\nBếp sử dụng mặt bếp kính Vitro Ceramic, bảng điều khiển cảm ứng. \n\nMột số tính năng nổi bật bao gồm:\n\n* Chỉ sử dụng được với loại nồi có đế nhiễm từ.\n* Kích thước bề mặt nấu: 730mm x 430mm.\n* Có tính năng khóa an toàn, hẹn giờ, chống tràn và nhận diện nồi."
+                }
+            ]
+        },
+        {
+            "id_conversation": "user1.1",
+            "messages": [
+                {
+                    "HumanMessage": "2 loại Bếp từ đơn AIO Smart kèm nồi và Bếp từ đôi AIO Smart bếp nào rẻ hơn",
+                    "AIMessage": "Dựa vào thông tin được cung cấp, Bếp từ đơn AIO Smart kèm nồi rẻ hơn Bếp từ đôi AIO Smart. \n\n* Bếp từ đơn AIO Smart kèm nồi có giá là 1.089.000 VND.\n* Bếp từ đôi AIO Smart có giá là 4.962.870 VND."
+                },
+                {
+                    "HumanMessage": "Miêu tả chức năng Bếp từ đôi AIO Smart",
+                    "AIMessage": "Bếp từ đôi AIO Smart có công suất 4400W, chia đều 2200W cho mỗi vùng nấu. \n\n- Mặt bếp làm bằng kính Vitro Ceramic, điều khiển bằng cảm ứng.\n- Chỉ sử dụng với loại nồi có đế nhiễm từ.\n- Bề mặt bếp rộng 730mm x 430mm, cao 75mm.\n-  Có khóa an toàn, hẹn giờ, tính năng chống tràn và nhận diện nồi."
+                },
+                {
+                    "HumanMessage": "Giá bán khi có ưu đãi của  Bếp từ đôi AIO Smart",
+                    "AIMessage": "Đề bài không cung cấp thông tin cụ thể về giá ưu đãi của Bếp từ đôi AIO Smart. \n\nChỉ có thông tin: \"Đặc biệt giá ưu đãi của Bếp từ đôi AIO Smart sẽ là , giá chưa có VAT là khi . Bên cạnh đó , giá ưu đãi của Bếp từ đôi AIO Smart sẽ là , giá chưa có VAT là .\" \n\nTuy nhiên, các chỗ trống đó chưa được điền đầy đủ."
+                },
+                {
+                    "HumanMessage": "2 loại Bếp từ đơn AIO Smart kèm nồi và Bếp từ đôi AIO Smart bếp nào rẻ hơn",
+                    "AIMessage": "Dựa trên thông tin được cung cấp, Bếp từ đơn AIO Smart kèm nồi rẻ hơn Bếp từ đôi AIO Smart. \n\n* Bếp từ đơn AIO Smart kèm nồi có giá 1.089.000 đồng.\n* Bếp từ đôi AIO Smart có giá 4.962.870 đồng."
+                }
+            ]
+        },
+        {
+            "id_conversation": "user1.2",
+            "messages": [
+                {
+                    "HumanMessage": "Giá bán khi có ưu đãi của  Bếp từ đôi AIO Smart",
+                    "AIMessage": "Câu trả lời: \n\nĐể trả lời chính xác câu hỏi \"Giá bán khi có ưu đãi của Bếp từ đôi AIO Smart\" , bạn cần xem kỹ đoạn văn bản ngữ cảnh.\n\nNgữ cảnh cung cấp hai mức giá ưu đãi khác nhau cho Bếp từ đôi AIO Smart, nhưng không nói rõ điều kiện để áp dụng mỗi mức giá này.  \n\nVậy nên,  bạn cần tìm hiểu thêm thông tin về các điều kiện áp dụng để xác định chính xác giá ưu đãi."
+                }
+            ]
+        },
+        {
+            "id_conversation": "user1",
+            "messages": [
+                {
+                    "HumanMessage": "2 loại Bếp từ đơn AIO Smart kèm nồi và Bếp từ đôi AIO Smart bếp nào rẻ hơn",
+                    "AIMessage": "Bếp từ đơn AIO Smart kèm nồi rẻ hơn vì có giá là 1.089.000 đồng, trong khi Bếp từ đôi AIO Smart có giá là 4.962.870 đồng."
+                }
+            ]
+        }
+    ]
+}

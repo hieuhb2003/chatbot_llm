@@ -1,0 +1,17 @@
+{
+    "conversations": [
+        {
+            "id_conversation": "user2.1",
+            "messages": [
+                {
+                    "HumanMessage": "2 loại Bếp từ đơn AIO Smart kèm nồi và Bếp từ đôi AIO Smart bếp nào rẻ hơn",
+                    "AIMessage": "Dựa trên thông tin được cung cấp, Bếp từ đơn AIO Smart kèm nồi rẻ hơn Bếp từ đôi AIO Smart. \n\n* Bếp từ đơn AIO Smart kèm nồi có giá 1.089.000đ.\n* Bếp từ đôi AIO Smart có giá 4.962.870đ."
+                },
+                {
+                    "HumanMessage": "2 loại Bếp từ đơn AIO Smart kèm nồi và Bếp từ đôi AIO Smart bếp nào rẻ hơn",
+                    "AIMessage": "Theo ngữ cảnh, Bếp từ đơn AIO Smart kèm nồi có giá 1.089.000 đồng, còn Bếp từ đôi AIO Smart có giá 4.962.870 đồng. \n\nVậy nên Bếp từ đơn AIO Smart kèm nồi rẻ hơn."
+                }
+            ]
+        }
+    ]
+}

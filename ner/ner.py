@@ -84,6 +84,6 @@ class NER:
 # bố mẹ thưởng cho một con robot đồ chơi và bàn ủi khô bluestone DIB-3776 1300W. Bàn ủi là thiết bị cần có ở mọi nhà.
 # Bên cạnh đó, Kalite KL-1500 là một nồi chiên không dầu rất tốt, gia đình đang cân nhắc mua. 
 # Và sản phẩm máy sấy tóc BHC010/10 cũng rất đáng chú ý"""
-# sentence = ""
-# model = NER()
-# print(model.predict(sentence))
+sentence = "có bao nhiêu Đèn Năng Lượng Mặt Trời"
+model = NER()
+print(model.predict(sentence))

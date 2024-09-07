@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giao diện chương trình</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        input, textarea {
+            margin: 10px 0;
+            padding: 10px;
+            width: 80%;
+            max-width: 500px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Chương trình Hỏi đáp</h1>
+    <button id="newConversationBtn">Tạo cuộc hội thoại mới</button>
+    <p id="conversationId"></p>
+
+    <input type="text" id="userId" placeholder="Nhập ID người dùng">
+    <textarea id="question" placeholder="Nhập câu hỏi của bạn"></textarea>
+    <button id="submitBtn">Gửi câu hỏi</button>
+    <p id="response"></p>
+
+    <script>
+        let conversationId = '';
+
+        // Hàm tạo ID cuộc hội thoại ngẫu nhiên
+        function generateConversationId() {
+            return 'conversation_' + Math.random().toString(36).substr(2, 9);
+        }
+
+        // Khi nhấn vào nút tạo cuộc hội thoại mới
+        document.getElementById('newConversationBtn').addEventListener('click', function() {
+            conversationId = generateConversationId();
+            document.getElementById('conversationId').innerText = 'ID cuộc hội thoại mới: ' + conversationId;
+        });
+
+        // Khi nhấn vào nút gửi câu hỏi
+        document.getElementById('submitBtn').addEventListener('click', async function() {
+            const userId = document.getElementById('userId').value;
+            const question = document.getElementById('question').value;
+
+            if (!userId || !question || !conversationId) {
+                alert('Vui lòng nhập đầy đủ thông tin và tạo cuộc hội thoại mới.');
+                return;
+            }
+
+            // Gọi hàm xử lý câu hỏi từ backend (giả sử bạn đã có một API để xử lý)
+            try {
+                const response = await fetch('/api/answer', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        question: question,
+                        id_user: userId,
+                        id_conversation: conversationId,
+                    }),
+                });
+
+                const data = await response.json();
+                document.getElementById('response').innerText = 'Câu trả lời: ' + data.answer;
+            } catch (error) {
+                console.error('Lỗi khi gửi câu hỏi:', error);
+                alert('Có lỗi xảy ra, vui lòng thử lại.');
+            }
+        });
+    </script>
+
+</body>
+</html>
