@@ -74,14 +74,14 @@ def answer(question:str,id_user:str,id_conversation:str, llm, model, chain, retr
             for item in name_entity['NAME']:
                 new_question += item + " "
         print(new_question)
-        respone = chain.invoke({"question":new_question, "input": new_question, "top_k":3, "table_info":"data_items","history":chat_history})
+        respone = chain.invoke({"question":new_question, "input": new_question, "top_k":3, "table_info":"data_items","history":format_chat_his})
     elif len(name_entity['GROUP_NAME']) == 0 and len(name_entity['NAME']) == 0:
-        respone = chain.invoke({"question":question, "input": question, "top_k":3, "table_info":"data_items","history":chat_history})
+        respone = chain.invoke({"question":question, "input": question, "top_k":3, "table_info":"data_items","history":format_chat_his})
 
     HistoryProcessor().update_history(id_user,id_conversation,HumanMessage=question,AIMessage=respone)
     return respone
-id_user = "1"
-id_conversation = "1"
-question = "có bao nhiêu Đèn Năng Lượng Mặt Trời"
-kq = answer(question,id_user,id_conversation,llm,model,chain,retrieval_doc)
-print(kq)
+# id_user = "1"
+# id_conversation = "1"
+# question = "có bao nhiêu Đèn Năng Lượng Mặt Trời"
+# kq = answer(question,id_user,id_conversation,llm,model,chain,retrieval_doc)
+# print(kq)

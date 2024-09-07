@@ -122,6 +122,7 @@ Dưới đây là một số ví dụ về câu hỏi và truy vấn SQL tương
         write_query = create_sql_query_chain(llm, db, full_prompt)
         execute_query = QuerySQLDataBaseTool(db=db)
         def extract(res):
+            # print(res)
             start_index = -1
             start_index = res.find("SELECT")
             if start_index == -1:
