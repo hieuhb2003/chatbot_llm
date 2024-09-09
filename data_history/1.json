@@ -54,6 +54,10 @@
                 {
                     "HumanMessage": "Cho tôi biết tên sản phẩm thuộc loại Đèn Năng Lượng Mặt Trời có giá dưới 5 triệu",
                     "AIMessage": "Có lỗi trong truy vấn SQL. \n\nHãy thử lại với truy vấn SQL sau:\n\n```sql\nSELECT *\nFROM data_items\nWHERE GROUP_NAME LIKE '%Đèn Năng Lượng Mặt Trời' AND NON_VAT_PRICE_1 < 500000;\n```\n\nNếu kết quả vẫn là null, có thể là dữ liệu trong bảng `data_items` không có sản phẩm nào thuộc loại \"Đèn Năng Lượng Mặt Trời\" với giá dưới 5 triệu. \n\nBạn có thể kiểm tra lại thông tin sản phẩm hoặc thử yêu cầu khác."
+                },
+                {
+                    "HumanMessage": "tên sản phẩm bình giữ nhiệt giá rẻ nhất",
+                    "AIMessage": "Có vẻ như có lỗi sai trong truy vấn SQL bạn đang sử dụng.  \n\nĐể tìm tên sản phẩm bình giữ nhiệt giá rẻ nhất trong nhóm \"Bình đun nước\", bạn cần sử dụng các cột `NON_VAT_PRICE_1`, `NON_VAT_PRICE_2`, `NON_VAT_PRICE_3` để so sánh giá và tìm giá thấp nhất.  \n\nVí dụ, bạn có thể sử dụng câu lệnh SELECT như sau:\n\n```sql\nSELECT NAME\nFROM data_items\nWHERE GROUP_NAME LIKE '%Bình giữ nhiệt'\nORDER BY NON_VAT_PRICE_1 ASC \nLIMIT 1;\n```\n\nCụm từ `ORDER BY NON_VAT_PRICE_1 ASC` sẽ sắp xếp sản phẩm theo giá tăng dần, và `LIMIT 1` sẽ trả về chỉ sản phẩm có giá thấp nhất.\n\nHãy thay đổi truy vấn SQL của bạn để sử dụng các cột giá và thử lại."
                 }
             ]
         },

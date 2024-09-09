@@ -55,6 +55,10 @@
                 {
                     "HumanMessage": "giá bán của nồi chiên không dầu đầu tiên",
                     "AIMessage": "Giá bán của nồi chiên không dầu đầu tiên là 1.473.200đ. \n\nGiải thích:\n\nTruy vấn SQL được sử dụng để tìm kiếm sản phẩm có tên nhóm \"Nồi chiên không dầu\" và trả về giá bán không gồm VAT của sản phẩm đầu tiên (NON_VAT_PRICE_1).  \n\nKết quả trả về là một danh sách giá bán, trong đó giá bán đầu tiên là 1.473.200đ."
+                },
+                {
+                    "HumanMessage": "tên sản phẩm bình giữ nhiệt giá rẻ nhất",
+                    "AIMessage": "Tên sản phẩm bình giữ nhiệt giá rẻ nhất trong nhóm \"Bình đun nước\" là Ấm đun nước AIO Smart AIOKTO2L23W/1C5 (màu trắng)."
                 }
             ]
         }

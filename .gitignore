@@ -2,3 +2,8 @@
 /.venv
 /vinallama-7b-chat_q5_0.gguf
 /ner/model
+data\database_204_items.db
+data\product_final_204_oke.xlsx.csv
+data\product_name.pkl
+data\meta_corpus.pkl
+data\corpus_embedding.pkl

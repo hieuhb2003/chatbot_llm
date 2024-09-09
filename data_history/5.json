@@ -10,6 +10,10 @@
                 {
                     "HumanMessage": "cho tôi biết cửa hàng bán các sản phẩm Điều hòa nào và giá của chúng ",
                     "AIMessage": "```sql\nSELECT PRODUCT_CODE, NAME, NON_VAT_PRICE_1, VAT_PRICE_1 \nFROM data_items \nWHERE GROUP_NAME LIKE '%điều hòa%';\n``` \n\nLưu ý: Để trả lời chính xác câu hỏi của người dùng, tôi cần kết quả trả về từ truy vấn SQL trên. \n\nVui lòng cung cấp kết quả trả về từ truy vấn SQL, tôi sẽ giúp bạn phân tích và trả lời câu hỏi một cách đầy đủ."
+                },
+                {
+                    "HumanMessage": "tên sản phẩm bình giữ nhiệt giá rẻ nhất",
+                    "AIMessage": "Tên sản phẩm bình giữ nhiệt giá rẻ nhất trong nhóm \"Bình đun nước\" là: Ấm đun nước AIO Smart AIOKTO2L23W/1C5 (màu trắng)."
                 }
             ]
         }

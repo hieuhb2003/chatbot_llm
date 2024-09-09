@@ -1,0 +1,57 @@
+{
+    "conversations": [
+        {
+            "id_conversation": "1",
+            "messages": [
+                {
+                    "HumanMessage": "cho tôi biết giá của Bàn Ủi Khô DIB-3726 1300W",
+                    "AIMessage": "Giá bán chính thức của Bàn Ủi Khô Bluestone DIB-3726 1300W là 376.860 đồng. \n\nTuy nhiên, sản phẩm có các mức giá ưu đãi khác dựa vào giá trị đơn hàng:\n\n* Giá ưu đãi khi đơn hàng > 10 triệu: 340.010 đồng\n* Giá ưu đãi khi đơn hàng từ 5-10 triệu: 347.380 đồng"
+                },
+                {
+                    "HumanMessage": "cho tôi biết Bàn Ủi Khô DIB-3726 1300W và Bàn ủi hơi nước Philips GC1740/20 2000W có công suất cao hơn",
+                    "AIMessage": "Bàn ủi hơi nước Philips GC1740/20 2000W có công suất cao hơn (2000W) so với Bàn Ủi Khô Bluestone DIB-3726 1300W (1300W)."
+                },
+                {
+                    "HumanMessage": "cho tôi biết Bàn Ủi Khô DIB-3726 và Bàn ủi hơi nước Philips GC1740/20  có công suất cao hơn",
+                    "AIMessage": "Bàn ủi hơi nước Philips GC1740/20 có công suất cao hơn với 2000W so với Bàn Ủi Khô DIB-3726 có công suất 1300W."
+                },
+                {
+                    "HumanMessage": "cho tôi biết Bàn Ủi Khô  và Bàn ủi hơi nước  có giá rẻ hơn",
+                    "AIMessage": "Dựa trên kết quả truy vấn SQL, sản phẩm Bàn Ủi Khô Bluestone DIB-3726 1300W có giá rẻ hơn Bàn ủi hơi nước Philips GC1740/20 2000W. \n \n Giá của Bàn Ủi Khô Bluestone DIB-3726 1300W là 376860 VNĐ, còn Bàn ủi hơi nước Philips GC1740/20 2000W là 564960 VNĐ."
+                },
+                {
+                    "HumanMessage": "có bao nhiêu sản phẩm bình nước nóng",
+                    "AIMessage": "Câu trả lời: Có 5 sản phẩm bình nước nóng."
+                },
+                {
+                    "HumanMessage": "cho tôi biết tên các loại sản phẩm bình nước nóng",
+                    "AIMessage": "Dưới đây là các loại sản phẩm bình nước nóng:\n\n* Bình nước nóng gián tiếp 15 lít AN2 15 B 2.5 FE\n* Bình nước nóng gián tiếp 20 lít SL2 20 B 2.5 FE\n* Bình nước nóng gián tiếp 30 lít SL2 30 B 2.5 FE\n* Máy NLMT Empire 130 Lít Titan EPNL-TT1213\n* Máy NLMT Empire 160 Lít Titan EPNL-TT1516"
+                },
+                {
+                    "HumanMessage": "cho tôi biết Bình nước nóng gián tiếp 30 lít SL2 30 B 2.5 FE có giá là bao nhiêu",
+                    "AIMessage": "Giá của Bình nước nóng gián tiếp 30 lít SL2 30 B 2.5 FE là 3.181.896 đồng. \n\nTuy nhiên, có những chương trình ưu đãi:\n\n* Giá ưu đãi: 2.894.430 đồng (giá chưa VAT là 2.631.300 đồng) khi đơn hàng > 30 triệu.\n* Giá ưu đãi: 2.957.790 đồng (giá chưa VAT là 2.688.900 đồng) khi đơn hàng từ 15-30 triệu."
+                },
+                {
+                    "HumanMessage": "cho tôi biết tên và giá của bình nước nóng có giá rẻ nhất",
+                    "AIMessage": "Tên sản phẩm có giá rẻ nhất trong nhóm \"Bình nước nóng\" là  \"Bình nước nóng gián tiếp 15 lít AN2 15 B 2.5 FE\" với giá 2.634.876 VND."
+                },
+                {
+                    "HumanMessage": "liệt kê cho tôi tên và giá tương ứng của tất cả những loại bình nước nóng theo thứ tự từ rẻ đến đắt",
+                    "AIMessage": "Dưới đây là danh sách bình nước nóng từ rẻ đến đắt:\n\n1. Bình nước nóng gián tiếp 15 lít AN2 15 B 2.5 FE - 2.634.876 VND\n2. Bình nước nóng gián tiếp 20 lít SL2 20 B 2.5 FE - 2.896.850 VND\n3. Bình nước nóng gián tiếp 30 lít SL2 30 B 2.5 FE - 3.181.896 VND\n4. Máy NLMT Empire 130 Lít Titan EPNL-TT1213 - 3.976.980 VND\n5. Máy NLMT Empire 160 Lít Titan EPNL-TT1516 - 4.388.620 VND"
+                },
+                {
+                    "HumanMessage": "ten san pham binh nuoc nong re nhat ",
+                    "AIMessage": "Tên sản phẩm bình nước nóng rẻ nhất là Bình nước nóng gián tiếp 15 lít AN2 15 B 2.5 FE với giá 2.634.876 VNĐ."
+                },
+                {
+                    "HumanMessage": "ten san pham binh giu nhiet re nhat ",
+                    "AIMessage": "Tên sản phẩm bình giữ nhiệt rẻ nhất là: Bình nước nóng gián tiếp 15 lít AN2 15 B 2.5 FE với giá VAT là 2.396.790 đồng."
+                },
+                {
+                    "HumanMessage": "tên sản phẩm bình giữ nhiệt giá rẻ nhất",
+                    "AIMessage": "Tên sản phẩm bình giữ nhiệt giá rẻ nhất trong nhóm \"Bình đun nước\" là Ấm đun nước AIO Smart AIOKTO2L23W/1C5 (màu trắng)."
+                }
+            ]
+        }
+    ]
+}
