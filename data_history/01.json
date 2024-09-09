@@ -1,0 +1,13 @@
+{
+    "conversations": [
+        {
+            "id_conversation": "01",
+            "messages": [
+                {
+                    "HumanMessage": "Tôi muốn biết giá của Bàn Ủi Bluestone DIB-3726",
+                    "AIMessage": "Giá của Bàn Ủi Bluestone DIB-3726 là 376860 đồng (đã có VAT), tương đương 342600 đồng chưa VAT.  \n\nBạn có thể được hưởng giá ưu đãi nếu đơn hàng của bạn trên một khoản nhất định: \n\n* Giá ưu đãi 340010 đồng (đã VAT), 309100 đồng (chưa VAT) khi giá trị đơn hàng > 10 triệu đồng.\n* Giá ưu đãi 347380 đồng (đã VAT), 315800 đồng (chưa VAT) khi giá trị đơn hàng từ 5-10 triệu đồng."
+                }
+            ]
+        }
+    ]
+}

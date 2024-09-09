@@ -1,0 +1,83 @@
+{
+    "conversations": [
+        {
+            "id_conversation": "1",
+            "messages": [
+                {
+                    "HumanMessage": "tôi muốn biết giá của Bàn Ủi Khô DIB-3726 ",
+                    "AIMessage": "Giá của Bàn Ủi Khô DIB-3726 là 376,860 đồng, chưa VAT là 342,600 đồng. \n\nTuy nhiên, có mức ưu đãi tùy thuộc vào giá trị đơn hàng:\n\n* Giá trị đơn hàng > 10 triệu: 340,010 đồng, chưa VAT là 309,100 đồng\n* Giá trị đơn hàng từ 5-10 triệu: 347,380 đồng, chưa VAT là 315,800 đồng"
+                },
+                {
+                    "HumanMessage": "cho tôi biết Bàn Ủi Khô DIB-3726  hay Bàn ủi Philips GC1740/20  có công suất cao hơn",
+                    "AIMessage": "Bàn ủi hơi nước Philips GC1740/20 có công suất cao hơn với 2000W so với Bàn Ủi Khô DIB-3726 có công suất 1300W."
+                },
+                {
+                    "HumanMessage": "giá của Bàn Ủi Khô DIB-3726  hay Bàn ủi Philips GC1740/20  rẻ hơn",
+                    "AIMessage": "Giá của Bàn Ủi Khô Bluestone DIB-3726 rẻ hơn Bàn ủi hơi nước Philips GC1740/20. \n\nDù chưa rõ bạn đang muốn so sánh giá nào (giá gốc, giá ưu đãi) nhưng xét về giá gốc thì:\n\n* Bàn Ủi Khô Bluestone DIB-3726: 376860\n* Bàn ủi hơi nước Philips GC1740/20: 564960"
+                }
+            ]
+        },
+        {
+            "id_conversation": "2",
+            "messages": [
+                {
+                    "HumanMessage": "",
+                    "AIMessage": "Có 3 sản phẩm phù hợp với yêu cầu của bạn:\n\n1. Máy giặt Electrolux lồng ngang 10kg màu trắng EWF1024D3WB\n   - Loại máy giặt: Cửa trước\n   - Lồng giặt: Lồng ngang\n   - Khối lượng giặt: 10 Kg\n   - ... (Xem thêm thông tin chi tiết về sản phẩm)\n\n2. Máy giặt Electrolux UltimateCare 300 Inverter 10 kg EWF1024M3SB\n   - Loại máy giặt: Cửa trước\n   - Lồng giặt: Lồng ngang\n   - Khối lượng giặt: 10 Kg\n   - ... (Xem thêm thông tin chi tiết về sản phẩm)\n\n3. Máy giặt Aqua cửa trên - 8Kg AQW-KS80GT.S\n   - Cửa trên - Lồng đứng\n   - Khối lượng giặt: 8 Kg\n   - ... (Xem thêm thông tin chi tiết về sản phẩm)"
+                },
+                {
+                    "HumanMessage": "có bao nhiêu sản phẩm bình nước nóng ",
+                    "AIMessage": "Có 5 sản phẩm thuộc loại Bình nước nóng."
+                },
+                {
+                    "HumanMessage": "cho tôi biết tên các loại bình nước nóng",
+                    "AIMessage": "## Câu trả lời:\n\nDưới đây là danh sách các loại bình nước nóng:\n\n* Bình nước nóng gián tiếp 15 lít AN2 15 B 2.5 FE\n* Bình nước nóng gián tiếp 20 lít SL2 20 B 2.5 FE\n* Bình nước nóng gián tiếp 30 lít SL2 30 B 2.5 FE\n* Máy NLMT Empire 130 Lít Titan EPNL-TT1213\n* Máy NLMT Empire 160 Lít Titan EPNL-TT1516"
+                },
+                {
+                    "HumanMessage": "cho tôi biết Bình nước nóng gián tiếp 30 lít SL2 30 B 2.5 FE giá bao nhiêu",
+                    "AIMessage": "Giá bán chính thức của Bình nước nóng gián tiếp 30 lít SL2 30 B 2.5 FE là 3.208.700 đồng. \n\nTuy nhiên, có các chương trình ưu đãi:\n\n* Giá ưu đãi khi đơn hàng > 30 triệu: 2.894.430 đồng\n* Giá ưu đãi khi đơn hàng từ 15-30 triệu: 2.957.790 đồng"
+                },
+                {
+                    "HumanMessage": "Cho tôi biết tên và giá của bình nước nóng rẻ nhất ",
+                    "AIMessage": "Bình nước nóng gián tiếp 15 lít AN2 15 B 2.5 FE có giá rẻ nhất là 2.548.500 đồng."
+                },
+                {
+                    "HumanMessage": "Cho tôi biết tên và giá của bình nước nóng đắt nhất ",
+                    "AIMessage": "Tên của bình nước nóng đắt nhất là Máy NLMT Empire 160 Lít Titan EPNL-TT1516 với giá 5.122.590 VND."
+                },
+                {
+                    "HumanMessage": "Cho tôi  biết chức năng của Máy NLMT Empire 160 Lít Titan EPNL-TT1516",
+                    "AIMessage": "Dựa trên ngữ cảnh bạn cung cấp, sản phẩm Máy NLMT Empire 160 Lít Titan EPNL-TT1516 thuộc loại Bình nước nóng."
+                },
+                {
+                    "HumanMessage": "Cho tôi  biết chức năng của Máy NLMT Empire 160 Lít Titan EPNL-TT1516",
+                    "AIMessage": "Dựa trên ngữ cảnh bạn cung cấp, Máy NLMT Empire 160 Lít Titan EPNL-TT1516 thuộc loại Bình nước nóng."
+                },
+                {
+                    "HumanMessage": "Cho tôi  biết tính năng của Máy NLMT Empire 160 Lít Titan EPNL-TT1516",
+                    "AIMessage": "Máy NLMT Empire 160 Lít Titan EPNL-TT1516 có những tính năng sau:\n\n* Thương hiệu: EMPIRE\n* Số ống: 15 ống\n* Dung tích: 160 lít\n* Bình bảo ôn: Chất liệu Inox 304\n* Vỏ bảo ôn: Chất liệu Inox\n* Lớp Foam giữ nhiệt: Polyurethane độ dày 50mm được phun áp lực cao giúp bình giữ nhiệt lên đến 71 giờ\n* Khung đỡ: Chất liệu inox\n* Số người sử dụng: 3-5 người\n* Sản xuất: theo dây chuyền công nghệ Mỹ"
+                },
+                {
+                    "HumanMessage": "có bao nhiêu loại điều hòa ",
+                    "AIMessage": "Có 14 loại điều hòa."
+                },
+                {
+                    "HumanMessage": "cho tôi tên các loại điều hòa",
+                    "AIMessage": "## Câu trả lời: \n\nCó 1 loại điều hòa."
+                }
+            ]
+        },
+        {
+            "id_conversation": "3",
+            "messages": [
+                {
+                    "HumanMessage": "Cho tôi  biết chức năng của Máy NLMT Empire 160 Lít Titan EPNL-TT1516",
+                    "AIMessage": "Dựa trên ngữ cảnh bạn cung cấp, có thể suy luận rằng Máy NLMT Empire 160 Lít Titan EPNL-TT1516 là một bình nước nóng. \n\nThông tin \"Sản phẩm Máy NLMT Empire 160 Lít Titan EPNL-TT1516 thuộc loại Bình nước nóng\" đã xác định rõ chức năng của sản phẩm."
+                },
+                {
+                    "HumanMessage": "Cho tôi  biết tính năng của Máy NLMT Empire 160 Lít Titan EPNL-TT1516",
+                    "AIMessage": "Máy NLMT Empire 160 Lít Titan EPNL-TT1516 có các tính năng sau:\n\n* Thương hiệu: EMPIRE\n* Số ống: 15 ống\n* Dung tích: 160 lít\n* Bình bảo ôn: Chất liệu Inox 304\n* Vỏ bảo ôn: Chất liệu Inox\n* Lớp Foam giữ nhiệt: Polyurethane độ dày 50mm được phun áp lực cao giúp bình giữ nhiệt lên đến 71 giờ\n* Khung đỡ: Chất liệu inox\n* Số người sử dụng: 3-5 người\n* Sản xuất: theo dây chuyền công nghệ Mỹ"
+                }
+            ]
+        }
+    ]
+}

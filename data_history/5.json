@@ -1,0 +1,17 @@
+{
+    "conversations": [
+        {
+            "id_conversation": "1",
+            "messages": [
+                {
+                    "HumanMessage": "cho tôi biết cửa hàng bán các sản phẩm điều hòa nào và giá của chúng ",
+                    "AIMessage": "```sql\nSELECT PRODUCT_CODE, NAME, NON_VAT_PRICE_1, VAT_PRICE_1 \nFROM data_items \nWHERE GROUP_NAME LIKE '%điều hòa%';\n```\n\nLưu ý:\n\n*  Truy vấn SQL này sẽ trả về các sản phẩm có tên nhóm (GROUP_NAME) chứa từ \"điều hòa\", bất kể trường hợp chữ cái.\n*  Chúng tôi chọn các cột `PRODUCT_CODE`, `NAME`, `NON_VAT_PRICE_1`, và `VAT_PRICE_1` để trả về thông tin sản phẩm và giá. \n*  Nếu kết quả trả về rỗng, hãy thông báo cho người dùng như sau:\n\n\"Xin lỗi, không có sản phẩm điều hòa nào được tìm thấy trong hệ thống. Bạn có thể cung cấp thêm thông tin chi tiết về sản phẩm bạn tìm kiếm, chẳng hạn như tên thương hiệu hay mô tả sản phẩm để tôi có thể giúp bạn tốt hơn?\""
+                },
+                {
+                    "HumanMessage": "cho tôi biết cửa hàng bán các sản phẩm Điều hòa nào và giá của chúng ",
+                    "AIMessage": "```sql\nSELECT PRODUCT_CODE, NAME, NON_VAT_PRICE_1, VAT_PRICE_1 \nFROM data_items \nWHERE GROUP_NAME LIKE '%điều hòa%';\n``` \n\nLưu ý: Để trả lời chính xác câu hỏi của người dùng, tôi cần kết quả trả về từ truy vấn SQL trên. \n\nVui lòng cung cấp kết quả trả về từ truy vấn SQL, tôi sẽ giúp bạn phân tích và trả lời câu hỏi một cách đầy đủ."
+                }
+            ]
+        }
+    ]
+}

@@ -63,9 +63,7 @@ def answer(question:str,id_user:str,id_conversation:str, llm, model, chain, retr
             | RunnableLambda(complete_respone)
         )
         respone = basic_chain.invoke({"context":context,"question":question})
-        # print(respone)
     elif len(name_entity['GROUP_NAME']) > 0:
-        print(2)
         new_question = question + " .Trong câu có GROUP_NAME: "
         for item in name_entity['GROUP_NAME']:
             new_question += item + " "
@@ -73,8 +71,15 @@ def answer(question:str,id_user:str,id_conversation:str, llm, model, chain, retr
             new_question += " .Trong câu có NAME: "
             for item in name_entity['NAME']:
                 new_question += item + " "
-        print(new_question)
-        respone = chain.invoke({"question":new_question, "input": new_question, "top_k":3, "table_info":"data_items","history":format_chat_his})
+        status = True
+        while(status):
+            try:
+                respone = chain.invoke({"question":new_question, "input": new_question, "top_k":3, "table_info":"data_items","history":format_chat_his})
+                status = False
+            except Exception as e:
+                print(e)
+                status = True
+        
     elif len(name_entity['GROUP_NAME']) == 0 and len(name_entity['NAME']) == 0:
         respone = chain.invoke({"question":question, "input": question, "top_k":3, "table_info":"data_items","history":format_chat_his})
 

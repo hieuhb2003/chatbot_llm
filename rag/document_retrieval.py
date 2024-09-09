@@ -173,5 +173,6 @@ class DocumentRetrieval:
         return text
     
 # retriever = DocumentRetrieval()
-# question = "Có bao nhiêu loại nồi cơm điện"
-# print(retriever.retrieve_documents(question))
+# question = "Tôi muốn tìm hiểu về máy Philips GC1740/20 2000W"
+# print(f"Question: {question}")
+# print(f"Document: {retriever.retrieve_documents(question)}")

@@ -5,7 +5,6 @@ os.environ['GROQ_API_KEY'] = os.getenv('GROQ_API_KEY')
 os.environ['LANGCHAIN_API_KEY'] = os.getenv('LANGCHAIN_API_KEY')
 os.environ['LANGCHAIN_PROJECT'] = os.getenv('LANGCHAIN_PROJECT')
 os.environ['LANGCHAIN_TRACING_V2']  = 'true'
-from config import Config
 from langchain.chains import create_sql_query_chain
 from langchain_core.prompts import (
     ChatPromptTemplate,
@@ -121,8 +120,10 @@ Dưới đây là một số ví dụ về câu hỏi và truy vấn SQL tương
         )
         write_query = create_sql_query_chain(llm, db, full_prompt)
         execute_query = QuerySQLDataBaseTool(db=db)
+        # def full_write_query(item):
+        #     return {"query": item}
         def extract(res):
-            # print(res)
+            print(res)
             start_index = -1
             start_index = res.find("SELECT")
             if start_index == -1:
@@ -135,7 +136,7 @@ Dưới đây là một số ví dụ về câu hỏi và truy vấn SQL tương
             return q + ';'
         def complete_respone(response : str):
             return response.replace("**",'').strip()
-        chain = (
+        chain =( 
             RunnablePassthrough.assign(query=write_query).assign(
             result=itemgetter("query") | RunnableLambda(extract) | execute_query
         )

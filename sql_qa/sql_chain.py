@@ -153,16 +153,16 @@ new_chain = (
 )
 
 chat_history = []
-question = "Bán cho tôi 2 điều hòa Daikin có giá rẻ, 3 nồi cơm điện giá có tầm giá chung" 
+question = "Cho tôi biết tên sản phẩm thuộc loại Đèn Năng Lượng Mặt Trời có giá dưới 1500000" 
 response = new_chain.invoke({"question":question, "input": question, "top_k":3, "table_info":"data_items","history":chat_history})
 print(response)
 chat_history.extend([HumanMessage(content=question), AIMessage(content = response)])
 
-second_question = "Cho tôi tên các loại bếp từ này"
-response = new_chain.invoke({"question":second_question, "input": second_question, "top_k":3, "table_info":"data_items","history":chat_history})
-print(response)
-chat_history.extend([HumanMessage(content=second_question), AIMessage(content = response)])
+# second_question = "Cho tôi tên các loại bếp từ này"
+# response = new_chain.invoke({"question":second_question, "input": second_question, "top_k":3, "table_info":"data_items","history":chat_history})
+# print(response)
+# chat_history.extend([HumanMessage(content=second_question), AIMessage(content = response)])
 
-third_question = "Giá bán các loại bếp từ trên"
-response = new_chain.invoke({"question":third_question, "input": third_question, "top_k":3, "table_info":"data_items","history":chat_history})
-print(response)
+# third_question = "Giá bán các loại bếp từ trên"
+# response = new_chain.invoke({"question":third_question, "input": third_question, "top_k":3, "table_info":"data_items","history":chat_history})
+# print(response)

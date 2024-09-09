@@ -79,11 +79,11 @@ class NER:
         predictions = torch.argmax(logits, dim=-1)
         label_list = self.invert_tensor_to_label(sentence, predictions)
         return self.classify(label_list)
-# sentence = """Bạn x có tố chất thông minh cùng với sự cố gắng không ngừng nghỉ, bạn đã giành giải nhất môn toán. 
-# Trong không khí vui mừng chiến thắng, bạn đã được
-# bố mẹ thưởng cho một con robot đồ chơi và bàn ủi khô bluestone DIB-3776 1300W. Bàn ủi là thiết bị cần có ở mọi nhà.
-# Bên cạnh đó, Kalite KL-1500 là một nồi chiên không dầu rất tốt, gia đình đang cân nhắc mua. 
-# Và sản phẩm máy sấy tóc BHC010/10 cũng rất đáng chú ý"""
-sentence = "có bao nhiêu Đèn Năng Lượng Mặt Trời"
-model = NER()
-print(model.predict(sentence))
+# sentence = """ 
+# bố mẹ tôi vừa đi mua được một con robot đồ chơi và bàn ủi khô bluestone DIB-3776 1300W. Bàn ủi là thiết bị cần có ở mọi nhà.
+# Bên cạnh đó, Kalite KL-1500 là một nồi chiên không dầu rất tốt và sản phẩm máy sấy tóc BHC010/10 cũng rất đáng chú ý, gia đình đang cân nhắc mua. 
+# """
+# # sentence = "có bao nhiêu Đèn Năng Lượng Mặt Trời"
+# model = NER()
+# print(sentence)
+# print(model.predict(sentence))
