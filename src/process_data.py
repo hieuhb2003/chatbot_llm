@@ -126,10 +126,8 @@ class ProductVectorProcessor:
 
     def setup_collection(self):
         try:
-            collection_info = self.qdrant.get_collection(self.collection_name)
-            print(f"Collection exists. Points count: {collection_info.points_count}")
-        except Exception as e:
-            print(f"Collection does not exist. Creating new collection. Error: {e}")
+            self.qdrant.get_collection(self.collection_name)
+        except:
             self.qdrant.create_collection(
                 collection_name=self.collection_name,
                 vectors_config=models.VectorParams(

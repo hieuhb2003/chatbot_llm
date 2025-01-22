@@ -1,0 +1,3 @@
+C:\Users\mhieu\Desktop\chatbot\.venv\Scripts\Activate.ps1
+
+python -m app.app

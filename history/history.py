@@ -1,21 +1,35 @@
-import os, json
-from config import Config
+import uuid
+
 class HistoryProcessor:
-    def __init__(self) -> None:
-        pass
-    def create_new_history_file_data(self,id_user):
-        file_path = Config.history_dir + f"\{id_user}.json"
-        data = {
-            "conversations": []
-        }
-        # Lưu file mới
-        with open(file_path, 'w',encoding="utf-8") as file:
-            json.dump(data, file, ensure_ascii=False, indent=4)
-            
-    def load_history(self,id_user,id_conversation):
-        # Đường dẫn tới file JSON của người dùng
-        file_path = Config.history_dir + f"\{id_user}.json"
+    def __init__(self):
+        self.history = {}  # In-memory storage: {conversation_id: messages}
+        self.current_session = None
         
+    def get_current_session(self):
+        """Get current active session ID"""
+        if not self.current_session:
+            self.current_session = str(uuid.uuid4())[:8]
+        return self.current_session
+        
+    def create_new_session(self):
+        """Create and return new session ID"""
+        self.current_session = str(uuid.uuid4())[:8]
+        return self.current_session
+        
+    def load_history(self, id_user, id_conversation):
+        # Return history for current conversation only
+        return self.history.get(id_conversation, [])
+        
+    def update_history(self, id_user, id_conversation, HumanMessage, AIMessage):
+        # Initialize conversation if it doesn't exist
+        if id_conversation not in self.history:
+            self.history[id_conversation] = []
+            
+        # Add new message to conversation
+        self.history[id_conversation].append({
+            "HumanMessage": HumanMessage,
+            "AIMessage": AIMessage
+        })
         # Kiểm tra xem file có tồn tại không, không thì trả về list empty
         if not os.path.exists(file_path):
             return []
